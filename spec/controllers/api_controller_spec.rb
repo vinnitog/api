@@ -15,6 +15,10 @@ RSpec.describe ApiController, type: :controller do
 			get :get_brands
 		 	expect(response).to have_http_status(200)
 		end
+		it 'get orders' do
+			get :get_orders
+		 	expect(response).to have_http_status(200)
+		end
 	end
 
 	describe 'Post Methods' do
@@ -28,6 +32,10 @@ RSpec.describe ApiController, type: :controller do
 		end
 		it 'post brands' do
 			post :post_brand
+		 	expect(response).to have_http_status(200)
+		end
+		it 'post orders' do
+			post :post_order
 		 	expect(response).to have_http_status(200)
 		end
 	end

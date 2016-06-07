@@ -28,6 +28,15 @@ include HTTParty
     @response = HTTParty.get(url)
   end
 
+  def get_orders
+    @response = HTTParty.get('http://localhost:3000/orders.json')
+  end
+
+  def get_order
+    url = 'http://localhost:3000/orders/' + params[:id] + '.json'
+    @response = HTTParty.get(url)
+  end
+
   def post_client
     @options = {client:{name: 'post client', address: 'rua teste, bairro teste, nº1', tel: '(14)3433-2222'}}
     @response = HTTParty.post('http://localhost:3000/clients.json', body: @options)
@@ -41,6 +50,11 @@ include HTTParty
   def post_brand
     @options = {brand:{name: 'post brand', brand_type: '50L'}}
     @response = HTTParty.post('http://localhost:3000/brands.json', body: @options)
+  end
+
+  def post_order
+    @options = {order:{date: '10/10/2016', quantity: 50, value: 10.50}, product:{product_id: 1}}
+    @response = HTTParty.post('http://localhost:3000/orders.json', body: @options)
   end
 
   def put_client
@@ -73,6 +87,11 @@ include HTTParty
 
   def delete_brand
     url = 'http://localhost:3000/brands/' + params[:id] + '.json'
+    @response = HTTParty.delete(url)
+  end
+
+  def delete_order
+    url = 'http://localhost:3000/orders/' + params[:id] + '.json'
     @response = HTTParty.delete(url)
   end
 end
