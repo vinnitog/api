@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use mysql as the database for Active Record
@@ -17,6 +17,8 @@ gem 'httparty'
 gem 'pry-rails'
 gem 'rspec-rails'
 gem 'json'
+gem 'rails_12factor'
+gem 'puma'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
