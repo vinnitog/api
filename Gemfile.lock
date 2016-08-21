@@ -179,6 +179,7 @@ DEPENDENCIES
   httparty
   jbuilder (~> 2.0)
   jquery-rails
+  json
   mysql2 (~> 0.3.18)
   pry-rails
   rails (= 4.2.4)

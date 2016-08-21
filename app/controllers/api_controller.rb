@@ -1,5 +1,10 @@
 class ApiController < ApplicationController
+require 'json'
 include HTTParty
+
+  def get_proposicoes
+    @response = HTTParty.get('http://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoesVotadasEmPlenario?ano=2016&tipo=')
+  end
 
   def get_clients
     @response = HTTParty.get('http://localhost:3000/clients.json')

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+ get 'api/get/proposicoes' => 'api#get_proposicoes'
  get 'api/get/clients' => 'api#get_clients'
  get 'api/get/client/:id' => 'api#get_client' 
 
